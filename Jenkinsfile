@@ -1,15 +1,20 @@
 pipeline{
     agent any
     stages{
-        stage('STAGE3'){
+        stage('STAGE1'){
             steps {
-            echo 'this is stage3'
+            sh 'ls -lrt'
             }
         }
 
-    stage('STAGE4'){
+    stage('STAGE2'){
         steps {
-            echo 'this is stage4'
+         sh '''
+            pwd
+            sleep 10
+            ls -lrt
+            '''
+
         }
     }
 }
